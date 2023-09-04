@@ -1,12 +1,10 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import tensorflow as tf
-from sklearn.preprocessing import StandardScaler
 import joblib
 
 # Load the trained model
-model = tf.keras.models.load_model("fraud_detection_model.h5")
+model = joblib.load("model.joblib")
 
 # Load the scaler used during training
 scaler = joblib.load("scaler.pkl")
