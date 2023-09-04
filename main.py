@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
-import tensorflow as tf 
+import tensorflow as tf
+
 
 model = tf.keras.models.load_model("mfraud_detection_model.h5")
 
