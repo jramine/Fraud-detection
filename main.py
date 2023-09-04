@@ -5,7 +5,8 @@ import joblib
 model = joblib.load("model.joblib")
 
 # Load the scaler used during training
-scaler = joblib.load("scaler.pkl")
+scaler = joblib.load("scaler.joblib")
+
 
 # Streamlit interface
 st.title("Fraud Detection")
