@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 import joblib
 
-# Load the trained model
 model = joblib.load("model.joblib")
 
 # Load the scaler used during training
