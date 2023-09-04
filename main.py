@@ -1,8 +1,8 @@
 import streamlit as st
-import numpy as np
 import pandas as pd
 import joblib
 
+# Load the trained model
 model = joblib.load("model.joblib")
 
 # Load the scaler used during training
@@ -11,7 +11,7 @@ scaler = joblib.load("scaler.pkl")
 # Streamlit interface
 st.title("Fraud Detection")
 
-# Input fields for the user to enter values
+# Input fields for user to enter values
 distance_from_home = st.number_input("Distance from Home")
 distance_from_last_transaction = st.number_input("Distance from Last Transaction")
 ratio_to_median_purchase_price = st.number_input("Ratio to Median Purchase Price")
@@ -22,12 +22,12 @@ online_order = st.checkbox("Online Order")
 
 # Predict button
 if st.button("Predict Fraud"):
-    input_data = np.array([
+    input_data = [
         distance_from_home, distance_from_last_transaction, ratio_to_median_purchase_price,
         float(repeat_retailer), float(used_chip), float(used_pin_number), float(online_order)
-    ])
+    ]
     
-    input_data = input_data.reshape(1, -1)
+    input_data = [input_data]  # Reshape as a list of lists
     
     # Standardize input data using the loaded scaler
     input_data = scaler.transform(input_data)
