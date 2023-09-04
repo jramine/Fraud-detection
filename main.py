@@ -3,7 +3,7 @@ import joblib
 import tensorflow as tf
 
 
-model = tf.keras.models.load_model("mfraud_detection_model.h5")
+model = tf.keras.models.load_model("fraud_detection_model.h5")
 
 
 # Load the scaler used during training
