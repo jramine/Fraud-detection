@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 import tensorflow as tf
 
-tf.keras.utils.get_custom_objects()['CustomAdam'] = CustomAdam
+CustomAdam = tf.keras.utils.get_custom_objects()['CustomAdam']
 
 # Load the Keras model
 model = tf.keras.models.load_model("fraud_detection_model.h5", custom_objects={'CustomAdam': CustomAdam})
