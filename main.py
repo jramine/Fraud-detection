@@ -1,8 +1,9 @@
 import streamlit as st
 import joblib
+import tensorflow as tf 
 
-# Load the trained model
-model = joblib.load("model.joblib")
+model = tf.keras.models.load_model("model.h5")
+
 
 # Load the scaler used during training
 scaler = joblib.load("scaler.joblib")
